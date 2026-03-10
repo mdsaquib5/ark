@@ -41,9 +41,9 @@ export default function Services() {
     }, []);
 
     return (
-        <section ref={containerRef} style={styles.section}>
+        <section ref={containerRef} className="section-padding" style={styles.section}>
             <h2 style={styles.heading}>Core Modules</h2>
-            <div style={styles.grid}>
+            <div className="services-grid" style={styles.grid}>
                 {services.map((service, i) => (
                     <div key={i} className="service-card glass" style={styles.card}>
                         <div style={styles.iconContainer}>
@@ -60,22 +60,17 @@ export default function Services() {
 
 const styles: { [key: string]: React.CSSProperties } = {
     section: {
-        padding: "100px 10%",
         backgroundColor: "transparent",
     },
     heading: {
-        fontSize: "3rem",
+        fontSize: "clamp(2rem, 5vw, 3rem)",
         fontWeight: 900,
         marginBottom: "4rem",
         textAlign: "center",
         textTransform: "uppercase",
         letterSpacing: "0.1em",
     },
-    grid: {
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-        gap: "30px",
-    },
+    grid: {},
     card: {
         padding: "40px",
         display: "flex",

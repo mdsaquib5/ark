@@ -20,18 +20,19 @@ export default function Certification() {
     };
 
     return (
-        <section style={styles.section}>
+        <section className="section-padding" style={styles.section}>
             <h2 style={styles.heading}>Authenticity Seal</h2>
 
             <div
+                className="cert-wrapper"
                 style={styles.certWrapper}
                 onMouseEnter={() => setShowMagnifier(true)}
                 onMouseLeave={() => setShowMagnifier(false)}
                 onMouseMove={handleMouseMove}
             >
-                <div className="glass" style={styles.certificate}>
+                <div className="glass cert-certificate" style={styles.certificate}>
                     <div style={styles.certContent}>
-                        <h3 style={styles.certTitle}>noohArk VENTURES</h3>
+                        <h3 className="cert-title" style={styles.certTitle}>noohArk VENTURES</h3>
                         <p style={styles.certSub}>Orbital Registration #29402-ARK</p>
                         <div style={styles.seal}></div>
                         <div style={styles.lorem}>
@@ -64,16 +65,16 @@ export default function Certification() {
 
 const styles: { [key: string]: React.CSSProperties } = {
     section: {
-        padding: "100px 10%",
         backgroundColor: "transparent",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
     },
     heading: {
-        fontSize: "3rem",
+        fontSize: "clamp(2rem, 5vw, 3rem)",
         fontWeight: 900,
         marginBottom: "4rem",
+        textAlign: "center",
     },
     certWrapper: {
         position: "relative",
@@ -84,7 +85,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     certificate: {
         width: "100%",
         aspectRatio: "1.414", // A4 ratio
-        padding: "60px",
+        padding: "clamp(20px, 5vw, 60px)",
         border: "2px solid var(--cyber-gold)",
         position: "relative",
         display: "flex",
@@ -95,7 +96,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     certContent: {
         textAlign: "center",
         border: "1px solid rgba(212, 175, 55, 0.2)",
-        padding: "40px",
+        padding: "clamp(10px, 4vw, 40px)",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -104,7 +105,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         gap: "20px",
     },
     certTitle: {
-        fontSize: "2.5rem",
+        fontSize: "clamp(1.2rem, 4vw, 2.5rem)",
         letterSpacing: "0.2em",
         color: "var(--cyber-gold)",
     },

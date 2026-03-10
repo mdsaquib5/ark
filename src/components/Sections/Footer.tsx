@@ -2,10 +2,10 @@
 
 export default function Footer() {
     return (
-        <footer style={styles.footer}>
+        <footer className="section-padding" style={styles.footer}>
             <div style={styles.content}>
                 <div style={styles.badge}>Status: Orbital Phase 1</div>
-                <h2 style={styles.title}>COMING SOON</h2>
+                <h2 className="footer-title" style={styles.title}>COMING SOON</h2>
                 <p style={styles.desc}>
                     The full noohArk terminal is currently in hyper-sleep.
                     Expect full deployment by Q3 2026.
@@ -13,9 +13,9 @@ export default function Footer() {
 
                 <div style={styles.divider}></div>
 
-                <div style={styles.bottom}>
+                <div className="footer-bottom" style={styles.bottom}>
                     <div style={styles.brand}>© 2026 noohArk Ventures. All rights reserved.</div>
-                    <div style={styles.links}>
+                    <div className="footer-links" style={styles.links}>
                         <span style={styles.link}>Privacy Protocol</span>
                         <span style={styles.link}>Mission Brief</span>
                         <span style={styles.link}>Orbital Sync</span>
@@ -28,7 +28,6 @@ export default function Footer() {
 
 const styles: { [key: string]: React.CSSProperties } = {
     footer: {
-        padding: "100px 10% 40px",
         backgroundColor: "rgba(0,0,0,0.5)",
         borderTop: "1px solid rgba(255,255,255,0.05)",
     },
@@ -49,7 +48,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         marginBottom: "20px",
     },
     title: {
-        fontSize: "4rem",
+        fontSize: "clamp(2rem, 10vw, 4rem)",
         fontWeight: 900,
         letterSpacing: "0.3em",
         color: "rgba(255,255,255,0.05)",

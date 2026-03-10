@@ -41,7 +41,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section ref={heroRef} className="hero-container" style={styles.section}>
+        <section ref={heroRef} className="hero-container section-padding" style={styles.section}>
             <header style={styles.header}>
                 <div style={styles.logo}>
                     <span style={styles.logoArk}>nooh</span>
@@ -74,13 +74,11 @@ const styles: { [key: string]: React.CSSProperties } = {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        padding: "0 10%",
         position: "relative",
     },
     header: {
         position: "absolute",
         top: "40px",
-        left: "10%",
         zIndex: 100,
     },
     logo: {
@@ -97,9 +95,10 @@ const styles: { [key: string]: React.CSSProperties } = {
     },
     content: {
         maxWidth: "1200px",
+        width: "100%",
     },
     title: {
-        fontSize: "clamp(3rem, 8vw, 6rem)",
+        fontSize: "clamp(2.5rem, 8vw, 6rem)",
         fontWeight: 900,
         lineHeight: 1.1,
         marginBottom: "2rem",
@@ -110,7 +109,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         WebkitTextFillColor: "transparent",
     },
     paragraph: {
-        fontSize: "1.25rem",
+        fontSize: "clamp(1rem, 2vw, 1.25rem)",
         color: "#888888",
         maxWidth: "600px",
         lineHeight: 1.6,

@@ -12,14 +12,14 @@ export default function LeadGen() {
     });
 
     return (
-        <section style={styles.section}>
-            <div className="glass" style={styles.container}>
+        <section className="section-padding" style={styles.section}>
+            <div className="glass lead-container" style={styles.container}>
                 <div style={styles.content}>
                     <h2 style={styles.heading}>Initiate Transmission</h2>
                     <p style={styles.para}>Secure your spot in the next orbital cycle.</p>
 
                     <form style={styles.form} onSubmit={(e) => e.preventDefault()}>
-                        <div style={styles.row}>
+                        <div className="lead-form-row" style={styles.row}>
                             <input
                                 type="text"
                                 placeholder="FULL NAME"
@@ -36,7 +36,7 @@ export default function LeadGen() {
                             />
                         </div>
 
-                        <div style={styles.row}>
+                        <div className="lead-form-row" style={styles.row}>
                             <select
                                 style={styles.input}
                                 value={form.service}
@@ -68,20 +68,19 @@ export default function LeadGen() {
 
 const styles: { [key: string]: React.CSSProperties } = {
     section: {
-        padding: "100px 10%",
         backgroundColor: "transparent",
     },
     container: {
         maxWidth: "900px",
         margin: "0 auto",
-        padding: "60px",
+        padding: "clamp(20px, 6vw, 60px)",
         border: "1px solid rgba(255,255,255,0.05)",
     },
     content: {
         textAlign: "center" as const,
     },
     heading: {
-        fontSize: "2.5rem",
+        fontSize: "clamp(1.5rem, 5vw, 2.5rem)",
         fontWeight: 900,
         marginBottom: "10px",
     },
@@ -97,11 +96,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         flexDirection: "column",
         gap: "20px",
     },
-    row: {
-        display: "flex",
-        gap: "20px",
-        flexWrap: "wrap",
-    },
+    row: {},
     input: {
         flex: 1,
         minWidth: "250px",

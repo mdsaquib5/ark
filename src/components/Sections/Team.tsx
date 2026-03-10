@@ -13,7 +13,7 @@ const team = [
 
 export default function Team() {
     return (
-        <section style={styles.section}>
+        <section className="section-padding" style={styles.section}>
             <h2 style={styles.heading}>The Crew</h2>
             <div style={styles.grid}>
                 {team.map((member, i) => (
@@ -37,11 +37,10 @@ export default function Team() {
 
 const styles: { [key: string]: React.CSSProperties } = {
     section: {
-        padding: "100px 10%",
         backgroundColor: "transparent",
     },
     heading: {
-        fontSize: "3rem",
+        fontSize: "clamp(2rem, 5vw, 3rem)",
         fontWeight: 900,
         marginBottom: "4rem",
         textAlign: "center",

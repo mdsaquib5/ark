@@ -6,13 +6,13 @@ export default function NotFound() {
             <div style={styles.content}>
                 <h1 style={styles.errorCode}>404</h1>
                 <div style={styles.divider}></div>
-                <h2 style={styles.message}>Lost in the Shadows</h2>
+                <h2 style={styles.message}>Transmission Lost</h2>
                 <p style={styles.description}>
-                    The page you are looking for has drifted into the void or never existed.
-                    Let's get you back to safety.
+                    Your coordinates are outside the known digital universe.
+                    The page you seek has drifted into the celestial void.
                 </p>
                 <Link href="/" style={styles.button}>
-                    Return Home
+                    Re-establish Connection
                 </Link>
             </div>
 
@@ -28,12 +28,11 @@ const styles: { [key: string]: React.CSSProperties } = {
         alignItems: "center",
         justifyContent: "center",
         minHeight: "100vh",
-        backgroundColor: "#0a0a0a",
+        backgroundColor: "transparent",
         color: "#ffffff",
         padding: "20px",
         position: "relative",
         overflow: "hidden",
-        fontFamily: "var(--font-montserrat), sans-serif",
     },
     content: {
         textAlign: "center",
@@ -41,68 +40,73 @@ const styles: { [key: string]: React.CSSProperties } = {
         maxWidth: "600px",
     },
     errorCode: {
-        fontSize: "clamp(8rem, 20vw, 12rem)",
+        fontSize: "clamp(6rem, 25vw, 15rem)",
         fontWeight: 900,
         margin: 0,
         lineHeight: 1,
-        background: "linear-gradient(180deg, #ffffff 0%, #444444 100%)",
+        background: "linear-gradient(180deg, #ffffff 0%, var(--pulsar-blue) 100%)",
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         letterSpacing: "-0.05em",
+        opacity: 0.8,
     },
     divider: {
-        height: "1px",
-        width: "60px",
-        backgroundColor: "#d4af37", // Gold accent
+        height: "2px",
+        width: "80px",
+        backgroundColor: "var(--cyber-gold)",
         margin: "20px auto",
+        boxShadow: "0 0 15px var(--cyber-gold)",
     },
     message: {
-        fontSize: "2rem",
+        fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
         fontWeight: 600,
         marginBottom: "1rem",
         textTransform: "uppercase",
-        letterSpacing: "0.1em",
+        letterSpacing: "0.2em",
+        color: "var(--pulsar-blue)",
     },
     description: {
-        color: "#888888",
-        fontSize: "1.1rem",
+        color: "#888",
+        fontSize: "clamp(0.9rem, 2vw, 1.1rem)",
         lineHeight: "1.6",
         marginBottom: "2.5rem",
+        maxWidth: "400px",
+        margin: "0 auto 2.5rem",
     },
     button: {
         display: "inline-block",
-        padding: "16px 40px",
-        backgroundColor: "transparent",
+        padding: "18px 45px",
+        backgroundColor: "rgba(255,255,255,0.05)",
         color: "#ffffff",
-        border: "1px solid #ffffff",
-        borderRadius: "0",
+        border: "1px solid rgba(255,255,255,0.2)",
+        backdropFilter: "blur(10px)",
         textDecoration: "none",
-        fontSize: "1rem",
-        fontWeight: 600,
-        letterSpacing: "0.1em",
+        fontSize: "0.9rem",
+        fontWeight: 700,
+        letterSpacing: "0.15em",
         textTransform: "uppercase",
         transition: "all 0.3s ease",
         cursor: "pointer",
     },
     glow1: {
         position: "absolute",
-        top: "20%",
-        left: "10%",
-        width: "40vw",
-        height: "40vw",
-        backgroundColor: "rgba(212, 175, 55, 0.05)", // Subtle gold glow
-        filter: "blur(100px)",
+        top: "30%",
+        left: "20%",
+        width: "30vw",
+        height: "30vw",
+        backgroundColor: "rgba(109, 40, 217, 0.1)", // Nebula purple
+        filter: "blur(120px)",
         borderRadius: "50%",
         zIndex: 1,
     },
     glow2: {
         position: "absolute",
-        bottom: "10%",
-        right: "10%",
-        width: "30vw",
-        height: "30vw",
-        backgroundColor: "rgba(255, 255, 255, 0.03)", // Subtle white glow
-        filter: "blur(80px)",
+        bottom: "20%",
+        right: "20%",
+        width: "25vw",
+        height: "25vw",
+        backgroundColor: "rgba(59, 130, 246, 0.08)", // Pulsar blue
+        filter: "blur(100px)",
         borderRadius: "50%",
         zIndex: 1,
     },

@@ -60,8 +60,8 @@ core.launch();
   `;
 
     return (
-        <section className="about-section" style={styles.section}>
-            <div style={styles.grid}>
+        <section className="about-section section-padding" style={styles.section}>
+            <div className="grid-container" style={styles.grid}>
                 <div className="about-item" style={styles.textSide}>
                     <h2 style={styles.heading}>The Digital Forge</h2>
                     <p style={styles.para}>
@@ -113,19 +113,15 @@ core.launch();
 const styles: { [key: string]: React.CSSProperties } = {
     section: {
         minHeight: "100vh",
-        padding: "100px 10%",
         backgroundColor: "transparent",
         display: "flex",
         alignItems: "center",
     },
     grid: {
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: "60px",
         width: "100%",
     },
     heading: {
-        fontSize: "3.5rem",
+        fontSize: "clamp(2rem, 5vw, 3.5rem)",
         fontWeight: 800,
         marginBottom: "1.5rem",
         color: "#fff",

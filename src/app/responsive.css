@@ -1,0 +1,123 @@
+/* Responsive Layouts */
+
+/* Hero Section */
+.hero-container {
+    padding: 0 10%;
+}
+
+@media (max-width: 1024px) {
+    .hero-container {
+        padding: 0 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .hero-container header {
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
+
+    .hero-container .scroll-indicator {
+        margin: 4rem auto 0 !important;
+    }
+}
+
+/* About Section */
+.about-section .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .about-section .grid-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-section {
+        padding: 80px 5% !important;
+    }
+}
+
+/* Services Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+@media (max-width: 640px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Certification Section */
+@media (max-width: 768px) {
+    .cert-certificate {
+        padding: 30px !important;
+    }
+
+    .cert-title {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Lead Gen Section */
+.lead-form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .lead-container {
+        padding: 40px 20px !important;
+    }
+
+    .lead-form-row input,
+    .lead-form-row select {
+        width: 100%;
+    }
+}
+
+/* Footer Section */
+@media (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+
+    .footer-title {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* Utility Classes */
+.section-padding {
+    padding: 100px 10%;
+}
+
+@media (max-width: 1024px) {
+    .section-padding {
+        padding: 80px 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 60px 20px;
+    }
+}
