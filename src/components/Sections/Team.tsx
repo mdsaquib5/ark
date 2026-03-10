@@ -1,14 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { FaLinkedin, FaXTwitter, FaGithub } from "react-icons/fa6";
 
 const team = [
-    { name: "Astra Vance", role: "Orbital Architect", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Astra" },
-    { name: "Nova Ray", role: "Nebula Developer", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Nova" },
-    { name: "Cyrus Ark", role: "Mission Control", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Cyrus" },
-    { name: "Lyra Moon", role: "Interface Voyager", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Lyra" },
-    { name: "Orion Sol", role: "Security Guardian", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Orion" },
-    { name: "Vega Star", role: "Data Navigator", image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Vega" },
+    { name: "Akram Hussain", role: "Managing Director & Founder", image: "/saquib.png" },
+    { name: "Mohammed Saquib", role: "Development Manager", image: "/saquib.png" },
+    { name: "Mohammed Farhan", role: "CEO + Finance Manager", image: "/saquib.png" },
 ];
 
 export default function Team() {
@@ -19,7 +17,13 @@ export default function Team() {
                 {team.map((member, i) => (
                     <div key={i} className="glass" style={styles.card}>
                         <div style={styles.imgContainer}>
-                            <img src={member.image} alt={member.name} style={styles.image} />
+                            <Image
+                                src={member.image}
+                                alt={member.name}
+                                width={180}
+                                height={180}
+                                style={styles.image}
+                            />
                         </div>
                         <h3 style={styles.name}>{member.name}</h3>
                         <p style={styles.role}>{member.role}</p>
@@ -56,8 +60,8 @@ const styles: { [key: string]: React.CSSProperties } = {
         transition: "transform 0.3s ease",
     },
     imgContainer: {
-        width: "120px",
-        height: "120px",
+        width: "180px",
+        height: "180px",
         margin: "0 auto 20px",
         borderRadius: "50%",
         overflow: "hidden",

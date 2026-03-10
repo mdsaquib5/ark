@@ -52,16 +52,16 @@ export default function Hero() {
             <div style={styles.content}>
                 <h1 ref={titleRef} style={styles.title}>
                     Architecting the Future of the <br />
-                    <span style={styles.gradientText}>Digital Universe</span>
+                    <span style={styles.gradientText}>Digital Landscape</span>
                 </h1>
                 <p ref={paraRef} style={styles.paragraph}>
-                    Beyond the code. Beyond the cloud. We build the ark <br />
-                    for your brand's digital journey into the unknown.
+                    We build the foundation for your brand's digital evolution. <br />
+                    Innovation-driven solutions for the modern era.
                 </p>
 
                 <div className="scroll-indicator" style={styles.scrollIndicator}>
                     <BsMouse size={32} color="var(--cyber-gold)" />
-                    <span style={styles.scrollText}>Scroll to Traverse</span>
+                    <span style={styles.scrollText}>Scroll to Explore</span>
                 </div>
             </div>
         </section>

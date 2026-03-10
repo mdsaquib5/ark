@@ -6,13 +6,13 @@ export default function NotFound() {
             <div style={styles.content}>
                 <h1 style={styles.errorCode}>404</h1>
                 <div style={styles.divider}></div>
-                <h2 style={styles.message}>Transmission Lost</h2>
+                <h2 style={styles.message}>Page Not Found</h2>
                 <p style={styles.description}>
-                    Your coordinates are outside the known digital universe.
-                    The page you seek has drifted into the celestial void.
+                    The page you are looking for has been moved or doesn't exist.
+                    Let's get you back on track.
                 </p>
                 <Link href="/" style={styles.button}>
-                    Re-establish Connection
+                    Return to Home
                 </Link>
             </div>
 

@@ -3,21 +3,20 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BiGlobe, BiLayer } from "react-icons/bi";
-import { HiOutlineCpuChip, HiOutlineShieldCheck, HiOutlineBolt, HiOutlineDevicePhoneMobile, HiOutlineCircleStack } from "react-icons/hi2";
+import { BiGlobe, BiBriefcase, BiTrendingUp, BiPalette } from "react-icons/bi";
+import { HiOutlineDevicePhoneMobile, HiOutlineCpuChip, HiOutlineChatBubbleLeftEllipsis } from "react-icons/hi2";
 import { IoRocketOutline } from "react-icons/io5";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
-    { title: "Website Development", icon: BiGlobe, desc: "Bespoke digital experiences built for impact." },
-    { title: "Web Application", icon: HiOutlineCpuChip, desc: "Scalable, high-performance software systems." },
-    { title: "UI/UX Architecture", icon: BiLayer, desc: "Designing intuitive lunar-path journeys." },
-    { title: "Cyber Shield", icon: HiOutlineShieldCheck, desc: "Fortifying your brand against void-threats." },
-    { title: "Performance Tuning", icon: HiOutlineBolt, desc: "Hyper-speed optimization for zero-lag." },
-    { title: "Strategic Launch", icon: IoRocketOutline, desc: "Propelling your startup into orbit." },
-    { title: "Mobile Ecosystems", icon: HiOutlineDevicePhoneMobile, desc: "Seamless apps for the multi-device voyager." },
-    { title: "Neural Databases", icon: HiOutlineCircleStack, desc: "Data structures that evolve with your mission." },
+    { title: "Website Development", icon: BiGlobe, desc: "Bespoke digital experiences built for maximum impact." },
+    { title: "App Development", icon: HiOutlineDevicePhoneMobile, desc: "High-performance mobile applications for iOS and Android." },
+    { title: "Portfolio Websites", icon: BiBriefcase, desc: "Showcase your work with stunning, professional portfolios." },
+    { title: "Landing Page", icon: IoRocketOutline, desc: "Conversion-optimized landing pages that drive results." },
+    { title: "SEO Ranking", icon: BiTrendingUp, desc: "Boost your visibility and dominate search engine results." },
+    { title: "AI Chatbot", icon: HiOutlineChatBubbleLeftEllipsis, desc: "Intelligent AI solutions to automate your customer engagement." },
+    { title: "Graphic Design", icon: BiPalette, desc: "Creative visual identities that define your brand." },
 ];
 
 export default function Services() {

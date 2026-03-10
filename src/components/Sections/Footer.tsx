@@ -4,21 +4,20 @@ export default function Footer() {
     return (
         <footer className="section-padding" style={styles.footer}>
             <div style={styles.content}>
-                <div style={styles.badge}>Status: Orbital Phase 1</div>
-                <h2 className="footer-title" style={styles.title}>COMING SOON</h2>
+                <h2 className="footer-title" style={styles.title}>NOOHARK</h2>
                 <p style={styles.desc}>
-                    The full noohArk terminal is currently in hyper-sleep.
-                    Expect full deployment by Q3 2026.
+                    Elevating your digital presence with cutting-edge solutions.
+                    Let's collaborate on your next big idea.
                 </p>
 
                 <div style={styles.divider}></div>
 
                 <div className="footer-bottom" style={styles.bottom}>
-                    <div style={styles.brand}>© 2026 noohArk Ventures. All rights reserved.</div>
+                    <div style={styles.brand}>© 2026 noohArk. All rights reserved.</div>
                     <div className="footer-links" style={styles.links}>
-                        <span style={styles.link}>Privacy Protocol</span>
-                        <span style={styles.link}>Mission Brief</span>
-                        <span style={styles.link}>Orbital Sync</span>
+                        <span style={styles.link}>Privacy</span>
+                        <span style={styles.link}>Terms</span>
+                        <span style={styles.link}>Contact</span>
                     </div>
                 </div>
             </div>

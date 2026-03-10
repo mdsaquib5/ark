@@ -33,13 +33,13 @@ export default function Certification() {
                 <div className="glass cert-certificate" style={styles.certificate}>
                     <div style={styles.certContent}>
                         <h3 className="cert-title" style={styles.certTitle}>noohArk VENTURES</h3>
-                        <p style={styles.certSub}>Orbital Registration #29402-ARK</p>
+                        <p style={styles.certSub}>Business Registration #2026-ARK</p>
                         <div style={styles.seal}></div>
                         <div style={styles.lorem}>
-                            CONFIDENTIAL DOCUMENT: Initializing digital infrastructure for decentralized orbital assets.
-                            This brand is registered under the Galactic Innovation Treaty.
+                            OFFICIAL VERIFICATION: Certified Digital Solutions Provider specializing in
+                            high-end web architecture, mobile ecosystems, and AI-driven automation.
                         </div>
-                        <div style={styles.signature}>Signature: Ark Command</div>
+                        <div style={styles.signature}>Signature: Director of noohArk</div>
                     </div>
                 </div>
 

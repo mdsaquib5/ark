@@ -4,10 +4,11 @@ import "./globals.css";
 import "./responsive.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import GalaxyCanvas from "@/components/Three/GalaxyCanvas";
+import BackgroundMusic from "@/components/BackgroundMusic";
 
 export const metadata: Metadata = {
-  title: "noohArk | Orbital Digital Experiences",
-  description: "Beyond the code. Beyond the cloud.",
+  title: "noohArk | Premium Digital Solutions",
+  description: "Bespoke web development and digital strategies.",
 };
 
 export default function RootLayout({
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.variable}>
         <GalaxyCanvas />
+        <BackgroundMusic />
         <SmoothScroll>
           {children}
         </SmoothScroll>
@@ -26,5 +28,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-

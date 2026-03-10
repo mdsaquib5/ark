@@ -10,27 +10,53 @@ export default function LeadGen() {
         service: "Website Development",
         brand: ""
     });
+    const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus("sending");
+
+        try {
+            const res = await fetch("/api/send-mail", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
+            });
+
+            if (res.ok) {
+                setStatus("success");
+                setForm({ name: "", email: "", service: "Website Development", brand: "" });
+                setTimeout(() => setStatus("idle"), 5000);
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            setStatus("error");
+        }
+    };
 
     return (
-        <section className="section-padding" style={styles.section}>
+        <section className="section-padding" style={styles.section} >
             <div className="glass lead-container" style={styles.container}>
                 <div style={styles.content}>
-                    <h2 style={styles.heading}>Initiate Transmission</h2>
-                    <p style={styles.para}>Secure your spot in the next orbital cycle.</p>
+                    <h2 style={styles.heading}>Book Your Project</h2>
+                    <p style={styles.para}>Let's build something extraordinary together.</p>
 
-                    <form style={styles.form} onSubmit={(e) => e.preventDefault()}>
+                    <form style={styles.form} onSubmit={handleSubmit}>
                         <div className="lead-form-row" style={styles.row}>
                             <input
                                 type="text"
                                 placeholder="FULL NAME"
                                 style={styles.input}
+                                required
                                 value={form.name}
                                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                             />
                             <input
                                 type="email"
-                                placeholder="COMMAND EMAIL"
+                                placeholder="YOUR EMAIL"
                                 style={styles.input}
+                                required
                                 value={form.email}
                                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                             />
@@ -43,26 +69,41 @@ export default function LeadGen() {
                                 onChange={(e) => setForm({ ...form, service: e.target.value })}
                             >
                                 <option>Website Development</option>
-                                <option>Web Application</option>
-                                <option>UI/UX Architecture</option>
-                                <option>Cyber Shield</option>
+                                <option>App Development</option>
+                                <option>Portfolio Websites</option>
+                                <option>Landing Page</option>
+                                <option>SEO Ranking</option>
+                                <option>AI Chatbot</option>
+                                <option>Graphic Design</option>
                             </select>
                             <input
                                 type="text"
                                 placeholder="YOUR BRAND NAME"
                                 style={styles.input}
+                                required
                                 value={form.brand}
                                 onChange={(e) => setForm({ ...form, brand: e.target.value })}
                             />
                         </div>
 
-                        <button style={styles.button}>
-                            Establish Connection <RiSendPlaneFill size={18} />
+                        <button
+                            disabled={status === "sending"}
+                            style={{
+                                ...styles.button,
+                                opacity: status === "sending" ? 0.7 : 1,
+                                backgroundColor: status === "success" ? "#4caf50" : (status === "error" ? "#f44336" : "var(--cyber-gold)"),
+                                color: status === "success" || status === "error" ? "#fff" : "#000"
+                            }}
+                        >
+                            {status === "idle" && <><RiSendPlaneFill size={18} /> Establish Connection</>}
+                            {status === "sending" && "Initializing Transmission..."}
+                            {status === "success" && "Transmission Received!"}
+                            {status === "error" && "Link Error. Try Again."}
                         </button>
                     </form>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
 
