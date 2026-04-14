@@ -6,6 +6,7 @@ const teamData = [
         name: "Akram Hussain",
         role: "Managing Director & Founder",
         imageSrc: "/akram.webp",
+        priority: true,
         socials: [
             { icon: FaLinkedin, link: "https://linkedin.com" },
             { icon: FaTwitter, link: "https://twitter.com" }
@@ -15,6 +16,7 @@ const teamData = [
         name: "Mohammed Farhan",
         role: "CEO & Finance Manager",
         imageSrc: "/farhan.webp",
+        priority: true,
         socials: [
             { icon: FaLinkedin, link: "https://linkedin.com" },
             { icon: FaTwitter, link: "https://twitter.com" },
@@ -24,6 +26,7 @@ const teamData = [
         name: "Mohammed Saquib",
         role: "Development Manager",
         imageSrc: "/saquib.webp",
+        priority: true,
         socials: [
             { icon: FaLinkedin, link: "https://linkedin.com" },
             { icon: FaTwitter, link: "https://twitter.com" }
@@ -33,42 +36,44 @@ const teamData = [
         name: "Firoz Ahmed",
         role: "Finance Manager",
         imageSrc: "/firoz.webp",
+        priority: true,
         socials: [
             { icon: FaLinkedin, link: "https://linkedin.com" },
             { icon: FaTwitter, link: "https://twitter.com" }
         ]
     },
     {
-        name: "Firoz Ahmed",
-        role: "Finance Manager",
-        imageSrc: "/firoz.webp",
+        name: "Md Asif",
+        role: "Quality Manager",
+        imageSrc: "/asif.webp",
+        priority: true,
         socials: [
             { icon: FaLinkedin, link: "https://linkedin.com" },
             { icon: FaTwitter, link: "https://twitter.com" }
         ]
     },
     {
-        name: "Firoz Ahmed",
-        role: "Finance Manager",
-        imageSrc: "/firoz.webp",
+        name: "Asad Ansari",
+        role: "Product Manager",
+        imageSrc: "/asad.webp",
         socials: [
             { icon: FaLinkedin, link: "https://linkedin.com" },
             { icon: FaTwitter, link: "https://twitter.com" }
         ]
     },
     {
-        name: "Firoz Ahmed",
-        role: "Finance Manager",
-        imageSrc: "/firoz.webp",
+        name: "Masooma Pathan",
+        role: "Marketing Manager",
+        imageSrc: "/masoom.webp",
         socials: [
             { icon: FaLinkedin, link: "https://linkedin.com" },
             { icon: FaTwitter, link: "https://twitter.com" }
         ]
     },
     {
-        name: "Firoz Ahmed",
-        role: "Finance Manager",
-        imageSrc: "/firoz.webp",
+        name: "Manisha Biswal",
+        role: "Customer Service Manager",
+        imageSrc: "/manisha.webp",
         socials: [
             { icon: FaLinkedin, link: "https://linkedin.com" },
             { icon: FaTwitter, link: "https://twitter.com" }
