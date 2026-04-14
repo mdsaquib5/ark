@@ -3,9 +3,18 @@ import TeamCard from "../shared/TeamCard";
 
 const teamData = [
     {
+        name: "Akram Hussain",
+        role: "Managing Director & Founder",
+        imageSrc: "/akram.webp",
+        socials: [
+            { icon: FaLinkedin, link: "https://linkedin.com" },
+            { icon: FaTwitter, link: "https://twitter.com" }
+        ]
+    },
+    {
         name: "Mohammed Farhan",
         role: "CEO & Finance Manager",
-        imageSrc: "/saquib.png",
+        imageSrc: "/farhan.webp",
         socials: [
             { icon: FaLinkedin, link: "https://linkedin.com" },
             { icon: FaTwitter, link: "https://twitter.com" },
@@ -14,16 +23,7 @@ const teamData = [
     {
         name: "Mohammed Saquib",
         role: "Development Manager",
-        imageSrc: "/saquib.png",
-        socials: [
-            { icon: FaLinkedin, link: "https://linkedin.com" },
-            { icon: FaTwitter, link: "https://twitter.com" }
-        ]
-    },
-    {
-        name: "Akram Hussain",
-        role: "Managing Director & Founder",
-        imageSrc: "/saquib.png",
+        imageSrc: "/saquib.webp",
         socials: [
             { icon: FaLinkedin, link: "https://linkedin.com" },
             { icon: FaTwitter, link: "https://twitter.com" }
@@ -32,7 +32,43 @@ const teamData = [
     {
         name: "Firoz Ahmed",
         role: "Finance Manager",
-        imageSrc: "/saquib.png",
+        imageSrc: "/firoz.webp",
+        socials: [
+            { icon: FaLinkedin, link: "https://linkedin.com" },
+            { icon: FaTwitter, link: "https://twitter.com" }
+        ]
+    },
+    {
+        name: "Firoz Ahmed",
+        role: "Finance Manager",
+        imageSrc: "/firoz.webp",
+        socials: [
+            { icon: FaLinkedin, link: "https://linkedin.com" },
+            { icon: FaTwitter, link: "https://twitter.com" }
+        ]
+    },
+    {
+        name: "Firoz Ahmed",
+        role: "Finance Manager",
+        imageSrc: "/firoz.webp",
+        socials: [
+            { icon: FaLinkedin, link: "https://linkedin.com" },
+            { icon: FaTwitter, link: "https://twitter.com" }
+        ]
+    },
+    {
+        name: "Firoz Ahmed",
+        role: "Finance Manager",
+        imageSrc: "/firoz.webp",
+        socials: [
+            { icon: FaLinkedin, link: "https://linkedin.com" },
+            { icon: FaTwitter, link: "https://twitter.com" }
+        ]
+    },
+    {
+        name: "Firoz Ahmed",
+        role: "Finance Manager",
+        imageSrc: "/firoz.webp",
         socials: [
             { icon: FaLinkedin, link: "https://linkedin.com" },
             { icon: FaTwitter, link: "https://twitter.com" }

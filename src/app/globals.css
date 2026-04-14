@@ -411,6 +411,7 @@ header {
 .team-image img {
   border-radius: 50%;
   object-fit: cover;
+  object-position: 100% 18%;
 }
 
 .profile-details {
