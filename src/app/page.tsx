@@ -1,19 +1,20 @@
-import Hero from "@/components/Sections/Hero";
-import Services from "@/components/Sections/Services";
-import RecentWork from "@/components/Sections/RecentWork";
-import Certification from "@/components/Sections/Certification";
-import Team from "@/components/Sections/Team";
-import LeadGen from "@/components/Sections/LeadGen";
-import Footer from "@/components/Sections/Footer";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import Hero from "@/components/ui/Hero";
+import Service from "@/components/ui/Service";
+import Works from "@/components/ui/Works";
+import Teams from "@/components/ui/Teams";
+import CalltoAction from "@/components/ui/CalltoAction";
+
 export default function Home() {
   return (
     <main>
+      <Header />
       <Hero />
-      <Services />
-      <RecentWork />
-      <Team />
-      <Certification />
-      <LeadGen />
+      <Service />
+      <Works />
+      <Teams />
+      <CalltoAction />
       <Footer />
     </main>
   );

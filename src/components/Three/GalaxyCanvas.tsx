@@ -38,11 +38,13 @@ function SpiderWeb() {
         return () => window.removeEventListener('mousemove', handleMouseMove);
     }, []);
 
+    const timer = useMemo(() => new THREE.Timer(), []);
+
     useFrame((state) => {
         if (!linesRef.current) return;
 
-        // Update point positions slightly for floating effect
-        const time = state.clock.getElapsedTime();
+        timer.update();
+        const time = timer.getElapsed();
         points.forEach((p, i) => {
             p.x += Math.sin(time + i) * 0.002;
             p.y += Math.cos(time + i) * 0.002;
@@ -64,7 +66,6 @@ function SpiderWeb() {
                     positions[index++] = points[j].y;
                     positions[index++] = points[j].z;
                 } else {
-                    // Flatten lines that are too far
                     positions[index++] = 0; positions[index++] = 0; positions[index++] = 0;
                     positions[index++] = 0; positions[index++] = 0; positions[index++] = 0;
                 }
@@ -97,7 +98,6 @@ export default function GalaxyCanvas() {
                 <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
                 <SpiderWeb />
                 <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-                    {/* Placeholder for Astronaut / Satellite */}
                     <mesh position={[5, 2, -5]}>
                         <octahedronGeometry args={[0.5, 0]} />
                         <meshStandardMaterial color="#d4af37" emissive="#d4af37" emissiveIntensity={2} />

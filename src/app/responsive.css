@@ -1,219 +1,218 @@
-/* Responsive Layouts */
+/* 
+  Responsive System for NoohArk
+  Targeting 1630px down to 360px
+*/
 
-/* Hero Section */
-.hero-container {
-    padding: 0 10%;
-}
-
-@media (max-width: 1024px) {
-    .hero-container {
-        padding: 0 5%;
+/* Extra Large Desktop Adjustment */
+@media (max-width: 1630px) {
+    .container {
+        max-width: 1400px;
     }
 }
 
-@media (max-width: 768px) {
-    .hero-container {
-        align-items: center;
+/* Desktop and Large Laptops */
+@media (max-width: 1440px) {
+    .container {
+        max-width: 1280px;
+    }
+    
+    .section {
+        padding-block: 70px;
+    }
+}
+
+/* Laptops and Small Desktops */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .cta-bg {
+        width: 80%;
+    }
+
+    .service-grid,
+    .work-grid,
+    .teams-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* Tablets Landscape */
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .hero-heading {
         text-align: center;
-        padding: 0 20px;
+        align-items: center;
     }
 
-    .hero-container header {
-        left: 50% !important;
-        transform: translateX(-50%);
+    .hero-content {
+        text-align: center;
+        align-items: center;
     }
 
-    .hero-container .scroll-indicator {
-        margin: 4rem auto 0 !important;
+    .cta-bg {
+        width: 100%;
+        padding: 40px 30px;
     }
-}
 
-/* Services Section */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-@media (max-width: 640px) {
-    .services-grid {
+    .lead-form-grid {
         grid-template-columns: 1fr;
     }
-}
-
-/* Recent Work Section */
-@media (max-width: 1024px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+    
+    .footer-divider {
+        width: 90%;
     }
 }
 
+/* Tablets Portrait */
 @media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .project-card {
+    .container {
         max-width: 100%;
+        padding-inline: 25px;
+    }
+
+    .section {
+        padding-block: 60px;
+    }
+
+    .section-title {
+        margin-bottom: 3rem;
+    }
+
+    .work-image {
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .team-image {
+        width: 70%;
+    }
+
+    .music-container {
+        bottom: 20px !important;
+        left: 20px !important;
+    }
+
+    .popup-container {
+        height: 75vh;
     }
 }
 
-@media (max-width: 480px) {
-    .section-padding {
-        padding: 60px 15px !important;
+/* Mobile Devices */
+@media (max-width: 576px) {
+    header {
+        padding-top: 25px;
+    }
+
+    .logo {
+        font-size: 1.75rem;
+    }
+
+    .service-card, .work-details, .team-card {
+        padding: 25px;
+    }
+
+    .service-grid,
+    .work-grid,
+    .teams-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .footer-title {
+        letter-spacing: 0.1em;
+        font-size: 2.8rem;
+    }
+
+    .cta-bg {
+       border-radius: 0;
+       border-left: 0;
+       border-right: 0;
     }
 }
 
-/* Recent Work Specific Interactions */
-.project-card {
-    transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease !important;
+/* Small Mobile Devices */
+@media (max-width: 360px) {
+    .container {
+        padding-inline: 15px;
+    }
+
+    .hero-heading {
+        font-size: 2.3rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .detail-title {
+        font-size: 1.4rem;
+    }
+
+    .lead-form button {
+        padding: 16px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .footer-title {
+        font-size: 2.2rem;
+    }
 }
 
-.project-card:hover {
-    transform: translateY(-10px) !important;
-    border-color: var(--cyber-gold) !important;
-    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.1);
+/* Global Font Weight & Layout Refinement */
+@media (max-width: 1024px) {
+    p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
 }
 
-.project-card:hover .project-thumb {
-    transform: scale(1.1);
+/* Premium Hover & Interactive Effects */
+.work-card {
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.4s ease !important;
 }
 
-.project-card:hover .project-overlay {
-    opacity: 1 !important;
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cyber-gold);
 }
 
-.project-card:hover .project-overlay div,
-.project-card:hover .project-overlay span {
-    transform: translateY(0) !important;
-}
-
-.custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background: var(--cyber-gold);
-    border-radius: 4px;
-}
-
-/* Background Music Component */
 .music-toggle:hover {
     transform: scale(1.1);
     border-color: var(--cyber-gold) !important;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
 }
 
 .music-bars .bar {
     width: 3px;
     background: var(--cyber-gold);
-    border-radius: 1px;
-    animation: bounce 1s ease-in-out infinite;
+    border-radius: 2px;
+    animation: musicBounce 1s ease-in-out infinite;
 }
 
-.music-bars .bar:nth-child(1) {
-    height: 60%;
-    animation-delay: 0.1s;
+@keyframes musicBounce {
+    0%, 100% { transform: scaleY(0.4); transform-origin: bottom; }
+    50% { transform: scaleY(1); transform-origin: bottom; }
 }
 
-.music-bars .bar:nth-child(2) {
-    height: 100%;
-    animation-delay: 0.3s;
-}
+.bar:nth-child(1) { height: 60%; animation-delay: 0.1s; }
+.bar:nth-child(2) { height: 100%; animation-delay: 0.3s; }
+.bar:nth-child(3) { height: 40%; animation-delay: 0.2s; }
+.bar:nth-child(4) { height: 80%; animation-delay: 0.4s; }
 
-.music-bars .bar:nth-child(3) {
-    height: 40%;
-    animation-delay: 0.2s;
-}
-
-.music-bars .bar:nth-child(4) {
-    height: 80%;
-    animation-delay: 0.4s;
-}
-
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: scaleY(0.4);
-        transform-origin: bottom;
-    }
-
-    50% {
-        transform: scaleY(1);
-        transform-origin: bottom;
-    }
-}
-
+/* Back to Top Responsive */
 @media (max-width: 768px) {
-    .music-container {
-        bottom: 20px !important;
-        left: 20px !important;
-    }
-}
-
-/* Certification Section */
-@media (max-width: 768px) {
-    .cert-certificate {
-        padding: 30px !important;
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
     }
 
-    .cert-title {
-        font-size: 1.5rem !important;
-    }
-}
-
-/* Lead Gen Section */
-.lead-form-row {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-    .lead-container {
-        padding: 40px 20px !important;
-    }
-
-    .lead-form-row input,
-    .lead-form-row select {
-        width: 100%;
-    }
-}
-
-/* Footer Section */
-@media (max-width: 768px) {
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-links {
-        justify-content: center;
-    }
-
-    .footer-title {
-        font-size: 2.5rem !important;
-    }
-}
-
-/* Utility Classes */
-.section-padding {
-    padding: 100px 10%;
-}
-
-@media (max-width: 1024px) {
-    .section-padding {
-        padding: 80px 5%;
-    }
-}
-
-@media (max-width: 768px) {
-    .section-padding {
-        padding: 60px 20px;
+    .scroll-progress-circle {
+        width: 45px;
+        height: 45px;
     }
 }
