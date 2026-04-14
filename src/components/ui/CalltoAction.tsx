@@ -1,5 +1,4 @@
-'use client';
-
+"use client";
 import { useState } from "react";
 import { RiSendPlaneFill } from "react-icons/ri";
 
@@ -12,121 +11,116 @@ const CalltoAction = () => {
         service: "",
         message: ""
     });
+    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState("");
 
-    const [status, setStatus] = useState<{
-        type: "idle" | "loading" | "success" | "error";
-        message: string;
-    }>({ type: "idle", message: "" });
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: any) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
-
-        // Basic Validation
-        if (!formData.name || !formData.email || !formData.service) {
-            setStatus({ type: "error", message: "Please fill in Name, Email and Service." });
-            return;
-        }
-
-        setStatus({ type: "loading", message: "Establishing connection..." });
+        setLoading(true);
+        setStatus("");
 
         try {
-            console.log("Transmission initialized...", formData);
-            const response = await fetch("/api/send-mail", {
+            const res = await fetch("/api/send-mail", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
             });
 
-            const data = await response.json();
+            const data = await res.json();
 
-            if (data.success) {
-                setStatus({ type: "success", message: "Transmission received. Our agents will respond shortly." });
+            if (res.ok) {
+                setStatus("Transmission received! We'll be in touch.");
                 setFormData({ name: "", email: "", phone: "", brand: "", service: "", message: "" });
             } else {
-                throw new Error(data.message || "Uplink failed.");
+                setStatus(`Error: ${data.message || "Failed to establish connection."}`);
             }
-        } catch (error: any) {
-            console.error("Transmission Error:", error);
-            setStatus({ type: "error", message: error.message || "Connection lost. Please try again later." });
+        } catch (error) {
+            console.error("Submission Error:", error);
+            setStatus("Connection lost. Please try again.");
+        } finally {
+            setLoading(false);
         }
     };
 
     return (
-        <div className="section">
-            <div className="container">
-                <div className="cta-bg glass">
-                    <div className="form-title">
-                        <div className="section-title">Book your project</div>
-                        <p>Let's build something extraordinary together.</p>
-                    </div>
-                    <div className="lead-form">
-                        <form onSubmit={handleSubmit}>
-                            <div className="lead-form-grid">
-                                <input name="name" type="text" placeholder="Name" value={formData.name} onChange={handleChange} required />
-                                <input name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
-                                <input name="phone" type="text" placeholder="Phone" value={formData.phone} onChange={handleChange} />
-                                <input name="brand" type="text" placeholder="Your Brand" value={formData.brand} onChange={handleChange} />
-                            </div>
-                            <div className="full-fields">
-                                <select name="service" value={formData.service} onChange={handleChange} required>
-                                    <option value="">Select Service</option>
-                                    <option value="Web Development">Web Development</option>
-                                    <option value="App Development">App Development</option>
-                                    <option value="UI/UX Design">UI/UX Design</option>
-                                    <option value="Digital Marketing">Digital Marketing</option>
-                                </select>
-                                <textarea name="message" placeholder="Message" rows={4} value={formData.message} onChange={handleChange}></textarea>
-
-                                {status.message && (
-                                    <div className={`form-alert ${status.type}`}>
-                                        {status.message}
-                                    </div>
-                                )}
-
-                                <button type="submit" disabled={status.type === "loading"}>
-                                    <RiSendPlaneFill size={18} />
-                                    {status.type === "loading" ? "Transmitting..." : "Establish Connection"}
-                                </button>
-                            </div>
-                        </form>
+        <>
+            <div className="section">
+                <div className="container">
+                    <div className="cta-bg glass">
+                        <div className="form-title">
+                            <div className="section-title">Book your project</div>
+                            <p>Let's build something extraordinary together.</p>
+                        </div>
+                        <div className="lead-form">
+                            <form onSubmit={handleSubmit}>
+                                <div className="lead-form-grid">
+                                    <input 
+                                        type="text" 
+                                        name="name"
+                                        placeholder="Name" 
+                                        value={formData.name} 
+                                        onChange={handleChange} 
+                                        required 
+                                    />
+                                    <input 
+                                        type="email" 
+                                        name="email"
+                                        placeholder="Email" 
+                                        value={formData.email} 
+                                        onChange={handleChange} 
+                                        required 
+                                    />
+                                    <input 
+                                        type="text" 
+                                        name="phone"
+                                        placeholder="Phone" 
+                                        value={formData.phone} 
+                                        onChange={handleChange} 
+                                    />
+                                    <input 
+                                        type="text" 
+                                        name="brand"
+                                        placeholder="Your Brand" 
+                                        value={formData.brand} 
+                                        onChange={handleChange} 
+                                    />
+                                </div>
+                                <div className="full-fields">
+                                    <select 
+                                        name="service"
+                                        value={formData.service} 
+                                        onChange={handleChange} 
+                                        required
+                                    >
+                                        <option value="">Select Service</option>
+                                        <option value="Web Development">Web Development</option>
+                                        <option value="App Development">App Development</option>
+                                        <option value="UI/UX Design">UI/UX Design</option>
+                                        <option value="Digital Marketing">Digital Marketing</option>
+                                    </select>
+                                    <textarea 
+                                        name="message"
+                                        placeholder="Message" 
+                                        rows={4} 
+                                        value={formData.message} 
+                                        onChange={handleChange}
+                                    ></textarea>
+                                    <button type="submit" disabled={loading}>
+                                        <RiSendPlaneFill size={18} />
+                                        {loading ? "Transmitting..." : "Establish Connection"}
+                                    </button>
+                                    {status && <p className={`status-msg ${status.includes("Error") ? "error" : "success"}`}>{status}</p>}
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <style jsx>{`
-                .form-alert {
-                    padding: 12px;
-                    border-radius: 8px;
-                    margin-bottom: 20px;
-                    font-size: 14px;
-                    text-align: center;
-                    border: 1px solid transparent;
-                }
-                .form-alert.loading {
-                    background: rgba(59, 130, 246, 0.1);
-                    color: #3b82f6;
-                    border-color: #3b82f6;
-                }
-                .form-alert.success {
-                    background: rgba(16, 185, 129, 0.1);
-                    color: #10b981;
-                    border-color: #10b981;
-                }
-                .form-alert.error {
-                    background: rgba(239, 68, 68, 0.1);
-                    color: #ef4444;
-                    border-color: #ef4444;
-                }
-                button:disabled {
-                    opacity: 0.5;
-                    cursor: not-allowed;
-                }
-            `}</style>
-        </div>
+        </>
     )
 }
 
