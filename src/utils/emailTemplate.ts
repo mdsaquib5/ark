@@ -1,5 +1,5 @@
-export const getEmailTemplate = (data: { name: string, email: string, service: string, brand: string }) => {
-    const { name, email, service, brand } = data;
+export const getEmailTemplate = (data: { name: string, email: string, phone: string, service: string, brand: string, message: string }) => {
+    const { name, email, phone, service, brand, message } = data;
 
     return `
     <!DOCTYPE html>
@@ -50,6 +50,13 @@ export const getEmailTemplate = (data: { name: string, email: string, service: s
                 color: #e0e0e0;
                 font-weight: 500;
             }
+            .message-box {
+                background: #151515;
+                padding: 15px;
+                border-radius: 8px;
+                border-left: 3px solid #6d28d9;
+                margin-top: 10px;
+            }
             .footer {
                 padding: 20px;
                 text-align: center;
@@ -78,12 +85,22 @@ export const getEmailTemplate = (data: { name: string, email: string, service: s
                     <div class="value">${email}</div>
                 </div>
                 <div class="item">
+                    <div class="label">Communication Line</div>
+                    <div class="value">${phone || "Not specified"}</div>
+                </div>
+                <div class="item">
                     <div class="label">Targeted Module</div>
                     <div class="value">${service}</div>
                 </div>
                 <div class="item">
                     <div class="label">Brand Identity</div>
                     <div class="value">${brand}</div>
+                </div>
+                <div class="item">
+                    <div class="label">Transmission Brief</div>
+                    <div class="message-box">
+                        ${message || "No additional message."}
+                    </div>
                 </div>
             </div>
             <div class="footer">
