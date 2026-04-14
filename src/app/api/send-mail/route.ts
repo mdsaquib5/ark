@@ -25,14 +25,14 @@ export async function POST(req: Request) {
         const { name, email, service, brand, phone, message } = body;
 
         if (!user || !pass) {
-            console.error(">>> Email API: Error - EMAIL_USER or EMAIL_PASS missing.");
             return NextResponse.json({ success: false, message: "Server configuration error." }, { status: 500 });
         }
 
         const mailOptions = {
-            from: `"noohArk Terminal" <${user}>`,
-            to: user,
-            subject: `New Project Inquiry: ${service} | ${brand}`,
+            from: `"${name}" <${user}>`, // Authorized sender but with visitor's name
+            to: user, // You receive the email
+            replyTo: email, // When you hit 'Reply', it goes to the visitor
+            subject: `NoohArk Technologies: ${service} | ${brand}`,
             html: getEmailTemplate({ name, email, service, brand, phone, message }),
         };
 
