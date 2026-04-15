@@ -58,55 +58,58 @@ const CalltoAction = () => {
                         <div className="lead-form">
                             <form onSubmit={handleSubmit}>
                                 <div className="lead-form-grid">
-                                    <input 
-                                        type="text" 
+                                    <input
+                                        type="text"
                                         name="name"
-                                        placeholder="Name" 
-                                        value={formData.name} 
-                                        onChange={handleChange} 
-                                        required 
+                                        placeholder="Name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
                                     />
-                                    <input 
-                                        type="email" 
+                                    <input
+                                        type="email"
                                         name="email"
-                                        placeholder="Email" 
-                                        value={formData.email} 
-                                        onChange={handleChange} 
-                                        required 
+                                        placeholder="Email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
                                     />
-                                    <input 
-                                        type="text" 
+                                    <input
+                                        type="text"
                                         name="phone"
-                                        placeholder="Phone" 
-                                        value={formData.phone} 
-                                        onChange={handleChange} 
+                                        placeholder="Phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
                                     />
-                                    <input 
-                                        type="text" 
+                                    <input
+                                        type="text"
                                         name="brand"
-                                        placeholder="Your Brand" 
-                                        value={formData.brand} 
-                                        onChange={handleChange} 
+                                        placeholder="Your Brand"
+                                        value={formData.brand}
+                                        onChange={handleChange}
                                     />
                                 </div>
                                 <div className="full-fields">
-                                    <select 
+                                    <select
                                         name="service"
-                                        value={formData.service} 
-                                        onChange={handleChange} 
+                                        value={formData.service}
+                                        onChange={handleChange}
                                         required
                                     >
                                         <option value="">Select Service</option>
-                                        <option value="Web Development">Web Development</option>
+                                        <option value="Web Development">Website Development</option>
                                         <option value="App Development">App Development</option>
-                                        <option value="UI/UX Design">UI/UX Design</option>
-                                        <option value="Digital Marketing">Digital Marketing</option>
+                                        <option value="UI/UX Design">AI & Chatbots</option>
+                                        <option value="Digital Marketing">Brand Portfolio</option>
+                                        <option value="Digital Marketing">Custom Software</option>
+                                        <option value="Digital Marketing">Email Marketing</option>
+                                        <option value="Digital Marketing">SEO Optimization</option>
                                     </select>
-                                    <textarea 
+                                    <textarea
                                         name="message"
-                                        placeholder="Message" 
-                                        rows={4} 
-                                        value={formData.message} 
+                                        placeholder="Message"
+                                        rows={4}
+                                        value={formData.message}
                                         onChange={handleChange}
                                     ></textarea>
                                     <button type="submit" disabled={loading}>

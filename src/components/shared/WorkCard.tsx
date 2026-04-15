@@ -26,7 +26,7 @@ const WorkCard = ({ item, onView }: WorkCardProps) => {
             <div className="work-details">
                 <div className="detail-title">{item.title}</div>
                 <p>{item.description}</p>
-                <Link href={item.liveLink}>View website Live</Link>
+                <Link href={item.liveLink} target="_blank">View website Live</Link>
             </div>
         </div>
     )

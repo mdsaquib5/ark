@@ -6,28 +6,28 @@ import WorkCard from "../shared/WorkCard";
 
 const workData = [
     {
-        title: "Luxury E-commerce",
-        description: "A sophisticated e-commerce framework designed for high-end luxury brands, featuring real-time inventory and global distribution sync.",
-        imageSrc: "/project-1.png",
-        liveLink: "/"
+        title: "Depp Pariwaar",
+        description: "Modern e-commerce platform Fast, secure checkout Responsive user experience",
+        imageSrc: "/project-1.webp",
+        liveLink: "https://pariwar-pi.vercel.app"
     },
     {
-        title: "Global Distribution",
-        description: "A sophisticated e-commerce framework designed for high-end luxury brands, featuring real-time inventory and global distribution sync.",
-        imageSrc: "/project-1.png",
-        liveLink: "/"
+        title: "Maatikalaa",
+        description: "Handcrafted products marketplace Elegant modern UI Dynamic product browsing",
+        imageSrc: "/project-2.webp",
+        liveLink: "https://maatikalaa-user.vercel.app"
     },
     {
-        title: "Artisan Marketplace",
-        description: "A sophisticated e-commerce framework designed for high-end luxury brands, featuring real-time inventory and global distribution sync.",
-        imageSrc: "/project-1.png",
-        liveLink: "/"
+        title: "PanchwatiX Hotel",
+        description: "Hotel booking website Room listings & reservations Clean responsive design",
+        imageSrc: "/project-3.webp",
+        liveLink: "https://panchwatix-hotel.vercel.app"
     },
     {
-        title: "Fashion Portal",
-        description: "A sophisticated e-commerce framework designed for high-end luxury brands, featuring real-time inventory and global distribution sync.",
-        imageSrc: "/project-1.png",
-        liveLink: "/"
+        title: "Inertiapixel Fashions",
+        description: "Fashion e-commerce store Interactive product catalog Smooth shopping experience",
+        imageSrc: "/project-5.webp",
+        liveLink: "http://fashion.inertiapixel.com"
     },
 ];
 

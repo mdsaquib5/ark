@@ -336,6 +336,7 @@ header {
   font-weight: 600;
   width: fit-content;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .popup-modal {
@@ -501,6 +502,19 @@ header {
   color: #fff;
   font-size: 0.95rem;
   width: 100%;
+}
+
+.lead-form select:focus-visible {
+  background-color: #000;
+}
+
+form :is(input, textarea):-webkit-autofill,
+form :is(input, textarea):-webkit-autofill:hover,
+form :is(input, textarea):-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: #eee !important;
+  transition: background-color 9999s ease-in-out 0s;
 }
 
 .lead-form button {
