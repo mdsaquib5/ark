@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 interface TeamCardProps {
     item: {
@@ -7,10 +6,6 @@ interface TeamCardProps {
         role: string;
         imageSrc: string;
         priority?: boolean;
-        socials: {
-            icon: any;
-            link: string;
-        }[];
     }
 }
 
@@ -30,16 +25,6 @@ const TeamCard = ({ item }: TeamCardProps) => {
             <div className="profile-details">
                 <div className="profile-name">{item.name}</div>
                 <p>{item.role}</p>
-                <div className="social-bar">
-                    {item.socials.map((social, index) => {
-                        const Icon = social.icon;
-                        return (
-                            <Link key={index} href={social.link} target="_blank">
-                                <Icon size={22} />
-                            </Link>
-                        );
-                    })}
-                </div>
             </div>
         </div>
     )

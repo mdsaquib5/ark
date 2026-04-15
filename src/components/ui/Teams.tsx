@@ -6,78 +6,49 @@ const teamData = [
         name: "Akram Hussain",
         role: "Managing Director & Founder",
         imageSrc: "/akram.webp",
-        priority: true,
-        socials: [
-            { icon: FaLinkedin, link: "https://linkedin.com" },
-            { icon: FaTwitter, link: "https://twitter.com" }
-        ]
+        priority: true
     },
     {
         name: "Mohammed Farhan",
         role: "CEO & Finance Manager",
         imageSrc: "/farhan.webp",
-        priority: true,
-        socials: [
-            { icon: FaLinkedin, link: "https://linkedin.com" },
-            { icon: FaTwitter, link: "https://twitter.com" },
-        ]
+        priority: true
     },
     {
         name: "Mohammed Saquib",
         role: "Development Manager",
         imageSrc: "/saquib.webp",
-        priority: true,
-        socials: [
-            { icon: FaLinkedin, link: "https://linkedin.com" },
-            { icon: FaTwitter, link: "https://twitter.com" }
-        ]
+        priority: true
     },
     {
         name: "Firoz Ahmed",
         role: "Finance Manager",
         imageSrc: "/firoz.webp",
-        priority: true,
-        socials: [
-            { icon: FaLinkedin, link: "https://linkedin.com" },
-            { icon: FaTwitter, link: "https://twitter.com" }
-        ]
+        priority: true
     },
     {
         name: "Md Asif",
         role: "Quality Manager",
         imageSrc: "/asif.webp",
-        priority: true,
-        socials: [
-            { icon: FaLinkedin, link: "https://linkedin.com" },
-            { icon: FaTwitter, link: "https://twitter.com" }
-        ]
+        priority: true
     },
     {
         name: "Asad Ansari",
         role: "Product Manager",
         imageSrc: "/asad.webp",
-        socials: [
-            { icon: FaLinkedin, link: "https://linkedin.com" },
-            { icon: FaTwitter, link: "https://twitter.com" }
-        ]
+        priority: true
     },
     {
         name: "Masooma Pathan",
         role: "Marketing Manager",
         imageSrc: "/masoom.webp",
-        socials: [
-            { icon: FaLinkedin, link: "https://linkedin.com" },
-            { icon: FaTwitter, link: "https://twitter.com" }
-        ]
+        priority: true
     },
     {
         name: "Manisha Biswal",
         role: "Customer Service Manager",
         imageSrc: "/manisha.webp",
-        socials: [
-            { icon: FaLinkedin, link: "https://linkedin.com" },
-            { icon: FaTwitter, link: "https://twitter.com" }
-        ]
+        priority: true
     },
 ];
 
