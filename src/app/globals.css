@@ -184,10 +184,6 @@ header {
   padding-bottom: 80px;
 }
 
-.service-card {
-  background: transparent;
-}
-
 .section-title {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 900;
@@ -248,7 +244,7 @@ header {
   height: 100%;
   transition: all 0.3s ease;
   position: relative;
-  background-color: transparent;
+  background-color: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: 6px;
 }
