@@ -64,7 +64,7 @@ export default function BackgroundMusic() {
 
     return (
         <div className="music-container" style={styles.container}>
-            <audio ref={audioRef} src="/song.mp3" loop />
+            <audio ref={audioRef} src="/song-st.mpeg" loop />
             <button
                 onClick={togglePlay}
                 className="glass music-toggle"
