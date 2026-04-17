@@ -23,20 +23,22 @@ export async function POST(req: Request) {
     try {
         const body = await req.json();
         const { name, email, service, brand, phone, message } = body;
+        console.log("Entering in api body", body);
 
         if (!user || !pass) {
+            console.log(">>> Email API: Server configuration error.");
             return NextResponse.json({ success: false, message: "Server configuration error." }, { status: 500 });
         }
 
         const mailOptions = {
-            from: `"${name}" <${user}>`, // Authorized sender but with visitor's name
-            to: user, // You receive the email
-            replyTo: email, // When you hit 'Reply', it goes to the visitor
+            from: `"${name}" <${user}>`,
+            to: user,
+            replyTo: email,
             subject: `NoohArk Technologies: ${service} | ${brand}`,
             html: getEmailTemplate({ name, email, service, brand, phone, message }),
         };
 
-        // Send mail in background so user doesn't wait
+        // Send mail in background so user doesn't wait 
         transporter.sendMail(mailOptions)
             .catch(err => console.error(">>> Email API: Background Send Error:", err));
 
