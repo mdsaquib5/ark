@@ -38,9 +38,8 @@ export async function POST(req: Request) {
             html: getEmailTemplate({ name, email, service, brand, phone, message }),
         };
 
-        // Send mail in background so user doesn't wait 
-        transporter.sendMail(mailOptions)
-            .catch(err => console.error(">>> Email API: Background Send Error:", err));
+        // Wait for the email to be sent
+        await transporter.sendMail(mailOptions);
 
         return NextResponse.json({ success: true, message: "Transmission received." });
     } catch (error: any) {
