@@ -92,6 +92,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         bottom: "30px",
         left: "30px",
         zIndex: 10000,
+        display: "none",
     },
     button: {
         width: "50px",
