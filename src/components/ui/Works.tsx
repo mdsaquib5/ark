@@ -6,7 +6,7 @@ import WorkCard from "../shared/WorkCard";
 
 const workData = [
     {
-        title: "Depp Pariwaar",
+        title: "Deep Pariwaar",
         description: "Modern e-commerce platform Fast, secure checkout Responsive user experience",
         imageSrc: "/project-1.webp",
         liveLink: "https://pariwar-pi.vercel.app"
