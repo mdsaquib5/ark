@@ -21,9 +21,9 @@ const teamData = [
         priority: true
     },
     {
-        name: "Firoz Ahmed",
-        role: "Finance Manager",
-        imageSrc: "/firoz.webp",
+        name: "Siddharth Srivastava",
+        role: "Data and AI Expert",
+        imageSrc: "/sid.webp",
         priority: true
     },
     {
