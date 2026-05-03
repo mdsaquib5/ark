@@ -64,7 +64,7 @@ export default function BackgroundMusic() {
 
     return (
         <div className="music-container" style={styles.container}>
-            <audio ref={audioRef} src="/song-st.mpeg" loop />
+            <audio ref={audioRef} src="/song.mp3" loop autoPlay />
             <button
                 onClick={togglePlay}
                 className="glass music-toggle"
@@ -92,7 +92,6 @@ const styles: { [key: string]: React.CSSProperties } = {
         bottom: "30px",
         left: "30px",
         zIndex: 10000,
-        display: "none",
     },
     button: {
         width: "50px",
